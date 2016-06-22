@@ -1,0 +1,1824 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: pong.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "pong.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "pong"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : pong
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "F:\RWPONG\score_segment_xy.v" into library work
+Parsing module <score_segment_xy>.
+INFO:HDLCompiler:693 - "F:\RWPONG\score_segment_xy.v" Line 47. parameter declaration becomes local in score_segment_xy with formal parameter declaration list
+INFO:HDLCompiler:693 - "F:\RWPONG\score_segment_xy.v" Line 48. parameter declaration becomes local in score_segment_xy with formal parameter declaration list
+Analyzing Verilog file "F:\RWPONG\score_segment_control.v" into library work
+Parsing module <score_segment_control>.
+Analyzing Verilog file "F:\RWPONG\mod_N_counter.v" into library work
+Parsing module <mod_N_counter>.
+Analyzing Verilog file "F:\RWPONG\graphics.v" into library work
+Parsing module <graphics>.
+Parsing verilog file "game_params.v" included at line 50.
+Analyzing Verilog file "F:\RWPONG\clock_N_Hz.v" into library work
+Parsing module <clock_N_Hz>.
+INFO:HDLCompiler:693 - "F:\RWPONG\clock_N_Hz.v" Line 29. parameter declaration becomes local in clock_N_Hz with formal parameter declaration list
+Analyzing Verilog file "F:\RWPONG\vga_controller.v" into library work
+Parsing module <vga_controller>.
+Analyzing Verilog file "F:\RWPONG\game_logic.v" into library work
+Parsing module <game_logic>.
+Parsing verilog file "game_params.v" included at line 37.
+Analyzing Verilog file "F:\RWPONG\clock.v" into library work
+Parsing module <clock>.
+Analyzing Verilog file "F:\RWPONG\ball_clock.v" into library work
+Parsing module <ball_clock>.
+Analyzing Verilog file "F:\RWPONG\pong.v" into library work
+Parsing module <pong>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <pong>.
+
+Elaborating module <clock>.
+WARNING:HDLCompiler:413 - "F:\RWPONG\clock.v" Line 33: Result of 3-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <ball_clock>.
+
+Elaborating module <clock_N_Hz(N=32'sb01111101000)>.
+
+Elaborating module <mod_N_counter(N=32'sb01100001101010000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 51: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb0111110100)>.
+
+Elaborating module <mod_N_counter(N=32'sb011000011010100000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 58: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb011111010)>.
+
+Elaborating module <mod_N_counter(N=32'sb0110000110101000000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 65: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb010100110)>.
+
+Elaborating module <mod_N_counter(N=32'sb01001001100010010100)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 72: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb01111101)>.
+
+Elaborating module <mod_N_counter(N=32'sb01100001101010000000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 79: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb01100100)>.
+
+Elaborating module <mod_N_counter(N=32'sb01111010000100100000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 86: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb01010011)>.
+
+Elaborating module <mod_N_counter(N=32'sb010010011000100101001)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 93: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb0111110)>.
+
+Elaborating module <mod_N_counter(N=32'sb011000100111000110011)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 100: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=32'sb0110010)>.
+
+Elaborating module <mod_N_counter(N=32'sb011110100001001000000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\ball_clock.v" Line 107: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <vga_controller>.
+WARNING:HDLCompiler:413 - "F:\RWPONG\vga_controller.v" Line 60: Result of 12-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\vga_controller.v" Line 76: Result of 12-bit expression is truncated to fit in 11-bit target.
+
+Elaborating module <game_logic>.
+
+Elaborating module <graphics>.
+
+Elaborating module <score_segment_xy(WIDTH=30,HEIGHT=30)>.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 51: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 53: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 54: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 56: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 57: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 60: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 62: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 63: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 65: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\score_segment_xy.v" Line 66: Result of 32-bit expression is truncated to fit in 12-bit target.
+
+Elaborating module <score_segment_control>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 224: Size mismatch in connection of port <en0>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 225: Size mismatch in connection of port <en1>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 226: Size mismatch in connection of port <en2>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 227: Size mismatch in connection of port <en3>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 228: Size mismatch in connection of port <en4>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 229: Size mismatch in connection of port <en5>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 230: Size mismatch in connection of port <en6>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 233: Size mismatch in connection of port <en0>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 234: Size mismatch in connection of port <en1>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 235: Size mismatch in connection of port <en2>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 236: Size mismatch in connection of port <en3>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 237: Size mismatch in connection of port <en4>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 238: Size mismatch in connection of port <en5>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 239: Size mismatch in connection of port <en6>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 242: Size mismatch in connection of port <en0>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 243: Size mismatch in connection of port <en1>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 244: Size mismatch in connection of port <en2>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 245: Size mismatch in connection of port <en3>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 246: Size mismatch in connection of port <en4>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 247: Size mismatch in connection of port <en5>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 248: Size mismatch in connection of port <en6>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 251: Size mismatch in connection of port <en0>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 252: Size mismatch in connection of port <en1>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 253: Size mismatch in connection of port <en2>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 254: Size mismatch in connection of port <en3>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 255: Size mismatch in connection of port <en4>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 256: Size mismatch in connection of port <en5>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\graphics.v" Line 257: Size mismatch in connection of port <en6>. Formal port size is 1-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 75: Size mismatch in connection of port <score1a_x>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 76: Size mismatch in connection of port <score1a_y>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 77: Size mismatch in connection of port <score1b_x>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 78: Size mismatch in connection of port <score1b_y>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 79: Size mismatch in connection of port <score2a_x>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 80: Size mismatch in connection of port <score2a_y>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 81: Size mismatch in connection of port <score2b_x>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 82: Size mismatch in connection of port <score2b_y>. Formal port size is 12-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 88: Size mismatch in connection of port <vgaRed>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 89: Size mismatch in connection of port <vgaGreen>. Formal port size is 3-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 90: Size mismatch in connection of port <vgaBlue>. Formal port size is 2-bit while actual signal size is 1-bit.
+
+Elaborating module <mod_N_counter(N=31'b0100010001011100000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 121: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+
+Elaborating module <clock_N_Hz(N=1)>.
+
+Elaborating module <mod_N_counter(N=32'sb010111110101111000010000000)>.
+WARNING:HDLCompiler:189 - "F:\RWPONG\game_logic.v" Line 129: Size mismatch in connection of port <en>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 442: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 447: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 448: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 452: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 453: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 457: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 458: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 462: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 463: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 467: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 468: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 472: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 473: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 477: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 478: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 485: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 486: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 490: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 491: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 495: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 496: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 500: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 501: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 505: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 506: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 510: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 511: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 515: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 516: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 523: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 528: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 529: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 533: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 534: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 538: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 539: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 543: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 544: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 548: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 549: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 553: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 554: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 558: Result of 32-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 559: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 566: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 567: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 571: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 572: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 576: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 577: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 581: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 582: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 586: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 587: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 591: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 592: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 596: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 597: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:81 - "F:\RWPONG\game_logic.v" Line 435: nx may be used uninitialized in static subprogram move_xy_by_angle and create unintended latch behavior
+WARNING:HDLCompiler:81 - "F:\RWPONG\game_logic.v" Line 436: ny may be used uninitialized in static subprogram move_xy_by_angle and create unintended latch behavior
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 624: Result of 14-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:81 - "F:\RWPONG\game_logic.v" Line 609: angle may be used uninitialized in static subprogram detect_collision_with_p1 and create unintended latch behavior
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 670: Result of 13-bit expression is truncated to fit in 12-bit target.
+WARNING:HDLCompiler:81 - "F:\RWPONG\game_logic.v" Line 655: angle may be used uninitialized in static subprogram detect_collision_with_p2 and create unintended latch behavior
+WARNING:HDLCompiler:81 - "F:\RWPONG\game_logic.v" Line 701: ball_x_o may be used uninitialized in static subprogram detect_collision_with_o and create unintended latch behavior
+WARNING:HDLCompiler:81 - "F:\RWPONG\game_logic.v" Line 703: angle_o may be used uninitialized in static subprogram detect_collision_with_o and create unintended latch behavior
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 260: Result of 32-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 266: Result of 32-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 281: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 285: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 305: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 309: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:817 - "F:\RWPONG\game_logic.v" Line 326: System task srandom ignored for synthesis
+WARNING:HDLCompiler:816 - "F:\RWPONG\game_logic.v" Line 329: System function call urandom not supported
+WARNING:HDLCompiler:816 - "F:\RWPONG\game_logic.v" Line 332: System function call urandom not supported
+WARNING:HDLCompiler:816 - "F:\RWPONG\game_logic.v" Line 335: System function call urandom not supported
+WARNING:HDLCompiler:413 - "F:\RWPONG\game_logic.v" Line 336: Result of 32-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:817 - "F:\RWPONG\game_logic.v" Line 342: System task srandom ignored for synthesis
+WARNING:HDLCompiler:816 - "F:\RWPONG\game_logic.v" Line 345: System function call urandom not supported
+WARNING:HDLCompiler:816 - "F:\RWPONG\game_logic.v" Line 348: System function call urandom not supported
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 367: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 368: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 369: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 370: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 378: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 379: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 380: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 381: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 389: Signal <ball_en> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 390: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 391: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 392: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 393: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 401: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 402: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 403: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 404: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 412: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 413: Signal <pixel_x> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 414: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 415: Signal <pixel_y> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 425: Signal <graphicsRed> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 426: Signal <graphicsGreen> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "F:\RWPONG\game_logic.v" Line 427: Signal <graphicsBlue> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:634 - "F:\RWPONG\pong.v" Line 69: Net <rst> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <pong>.
+    Related source file is "F:\RWPONG\pong.v".
+WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 3-bit register for signal <vgaGreen>.
+    Found 2-bit register for signal <vgaBlue>.
+    Found 3-bit register for signal <vgaRed>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <pong> synthesized.
+
+Synthesizing Unit <clock>.
+    Related source file is "F:\RWPONG\clock.v".
+    Found 2-bit register for signal <counter>.
+    Found 2-bit adder for signal <counter[1]_GND_2_o_add_2_OUT> created at line 33.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <clock> synthesized.
+
+Synthesizing Unit <ball_clock>.
+    Related source file is "F:\RWPONG\ball_clock.v".
+        BCN7 = 50000
+        BCN6 = 100000
+        BCN5 = 200000
+        BCN4 = 300000
+        BCN3 = 400000
+        BCN2 = 500000
+        BCN1 = 600000
+        BCN0 = 800000
+        BCNX = 1000000
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <ball_clock> synthesized.
+
+Synthesizing Unit <clock_N_Hz_1>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 1000
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_1> synthesized.
+
+Synthesizing Unit <mod_N_counter_1>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 50000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_5_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_1> synthesized.
+
+Synthesizing Unit <clock_N_Hz_2>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 500
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_2> synthesized.
+
+Synthesizing Unit <mod_N_counter_2>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 100000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_7_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_2> synthesized.
+
+Synthesizing Unit <clock_N_Hz_3>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 250
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_3> synthesized.
+
+Synthesizing Unit <mod_N_counter_3>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 200000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_9_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_3> synthesized.
+
+Synthesizing Unit <clock_N_Hz_4>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 166
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_4> synthesized.
+
+Synthesizing Unit <mod_N_counter_4>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 301204
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_11_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_4> synthesized.
+
+Synthesizing Unit <clock_N_Hz_5>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 125
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_5> synthesized.
+
+Synthesizing Unit <mod_N_counter_5>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 400000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_13_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_5> synthesized.
+
+Synthesizing Unit <clock_N_Hz_6>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 100
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_6> synthesized.
+
+Synthesizing Unit <mod_N_counter_6>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 500000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_15_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_6> synthesized.
+
+Synthesizing Unit <clock_N_Hz_7>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 83
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_7> synthesized.
+
+Synthesizing Unit <mod_N_counter_7>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 602409
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_17_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_7> synthesized.
+
+Synthesizing Unit <clock_N_Hz_8>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 62
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_8> synthesized.
+
+Synthesizing Unit <mod_N_counter_8>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 806451
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_19_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_8> synthesized.
+
+Synthesizing Unit <clock_N_Hz_9>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 50
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_9> synthesized.
+
+Synthesizing Unit <mod_N_counter_9>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 1000000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_21_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_9> synthesized.
+
+Synthesizing Unit <vga_controller>.
+    Related source file is "F:\RWPONG\vga_controller.v".
+        TotalHorizontalPixels = 11'b10000010000
+        HorizontalSyncWidth = 11'b00001111000
+        VerticalSyncWidth = 11'b00000000110
+        TotalVerticalLines = 11'b01010011010
+        HorizontalBackPorchTime = 11'b00010111000
+        HorizontalFrontPorchTime = 11'b01111011000
+        VerticalBackPorchTime = 11'b00000101011
+        VerticalFrontPorchTime = 11'b01010000011
+    Found 1-bit register for signal <vertical_sync_enable>.
+    Found 11-bit register for signal <vertical_counter>.
+    Found 11-bit register for signal <pixel_x>.
+    Found 11-bit register for signal <pixel_y>.
+    Found 1-bit register for signal <vidon>.
+    Found 11-bit register for signal <horizontal_counter>.
+    Found 11-bit subtractor for signal <horizontal_counter[10]_GND_22_o_sub_21_OUT> created at line 106.
+    Found 11-bit subtractor for signal <vertical_counter[10]_GND_22_o_sub_22_OUT> created at line 107.
+    Found 11-bit adder for signal <horizontal_counter[10]_GND_22_o_add_2_OUT> created at line 60.
+    Found 11-bit adder for signal <vertical_counter[10]_GND_22_o_add_8_OUT> created at line 76.
+    Found 11-bit comparator greater for signal <hsync> created at line 83
+    Found 11-bit comparator greater for signal <vsync> created at line 92
+    Found 11-bit comparator greater for signal <GND_22_o_horizontal_counter[10]_LessThan_17_o> created at line 103
+    Found 11-bit comparator greater for signal <horizontal_counter[10]_GND_22_o_LessThan_18_o> created at line 103
+    Found 11-bit comparator greater for signal <GND_22_o_vertical_counter[10]_LessThan_19_o> created at line 104
+    Found 11-bit comparator greater for signal <vertical_counter[10]_GND_22_o_LessThan_20_o> created at line 104
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <vga_controller> synthesized.
+
+Synthesizing Unit <game_logic>.
+    Related source file is "F:\RWPONG\game_logic.v".
+        X_MAX = 800
+        Y_MAX = 600
+        DIGIT_WIDTH = 30
+        DIGIT_WIDTH_HALF = 15
+        DIGIT_THICKNESS = 2
+        DIGIT_THICKNESS_HALF = 1
+        SCORE_PADDING = 5
+        SCORE_1_X = 200
+        SCORE_2_X = 600
+        SCORE_1A_X = 220
+        SCORE_1B_X = 180
+        SCORE_2A_X = 620
+        SCORE_2B_X = 580
+        SCORE_Y = 200
+        BALL_WIDTH = 6
+        BALL_WIDTH_HALF = 3
+        PLAYER_WIDTH = 6
+        PLAYER_WIDTH_HALF = 3
+        PLAYER_HEIGHT = 40
+        PLAYER_HEIGHT_HALF = 20
+        OBSTACLE_WIDTH = 20
+        OBSTACLE_WIDTH_HALF = 10
+        OBSTACLE_HEIGHT = 150
+        OBSTACLE_HEIGHT_HALF = 75
+        OBSTACLE1_X = 300
+        OBSTACLE1_Y = 75
+        OBSTACLE2_X = 500
+        OBSTACLE2_Y = 525
+        BALL_INITIAL_POSITION_X = 400
+        BALL_INITIAL_POSITION_Y = 300
+        P1_INITIAL_POSITION_X = 20
+        P1_INITIAL_POSITION_Y = 300
+        P2_INITIAL_POSITION_X = 780
+        P2_INITIAL_POSITION_Y = 300
+        TOP_BOUNDARY = 3
+        LEFT_BOUNDARY = 3
+        BOTTOM_BOUNDARY = 597
+        RIGHT_BOUNDARY = 797
+        PLAYER_TOP_BOUNDARY = 20
+        PLAYER_BOTTOM_BOUNDARY = 580
+        N = 31'b0000000000000100010001011100000
+WARNING:Xst:647 - Input <sw> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "F:\RWPONG\game_logic.v" line 118: Output port <count> of the instance <mnc1> is unconnected or connected to loadless signal.
+    Found 12-bit register for signal <p1_current_position_y>.
+    Found 12-bit register for signal <p2_current_position_x>.
+    Found 12-bit register for signal <p2_current_position_y>.
+    Found 64-bit register for signal <score1_t>.
+    Found 12-bit register for signal <ball_current_position_x>.
+    Found 12-bit register for signal <ball_current_position_y>.
+    Found 4-bit register for signal <score1a>.
+    Found 4-bit register for signal <score1b>.
+    Found 4-bit register for signal <score2a>.
+    Found 4-bit register for signal <score2b>.
+    Found 64-bit register for signal <score2_t>.
+    Found 1-bit register for signal <new_game>.
+    Found 1-bit register for signal <ball_en>.
+    Found 1-bit register for signal <ball_dir>.
+    Found 12-bit register for signal <move_xy_by_angle.nx>.
+    Found 12-bit register for signal <move_xy_by_angle.ny>.
+    Found 10-bit register for signal <angle>.
+    Found 10-bit register for signal <detect_collision_with_p1.angle>.
+    Found 10-bit register for signal <detect_collision_with_p2.angle>.
+    Found 12-bit register for signal <detect_collision_with_o.ball_x_o>.
+    Found 10-bit register for signal <detect_collision_with_o.angle_o>.
+    Found 12-bit register for signal <p1_current_position_x>.
+    Found 12-bit subtractor for signal <p1_current_position_y[11]_GND_23_o_sub_5_OUT> created at line 155.
+    Found 12-bit subtractor for signal <p2_current_position_y[11]_GND_23_o_sub_11_OUT> created at line 167.
+    Found 12-bit subtractor for signal <p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT> created at line 614.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_223_OUT> created at line 617.
+    Found 12-bit subtractor for signal <p2_current_position_y[11]_move_xy_by_angle.ny[11]_sub_244_OUT> created at line 660.
+    Found 12-bit subtractor for signal <GND_23_o_move_xy_by_angle.ny[11]_sub_267_OUT> created at line 717.
+    Found 12-bit subtractor for signal <GND_23_o_move_xy_by_angle.ny[11]_sub_310_OUT> created at line 717.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_432_OUT> created at line 367.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_436_OUT> created at line 369.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_440_OUT> created at line 378.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_444_OUT> created at line 380.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_448_OUT> created at line 390.
+    Found 13-bit subtractor for signal <GND_23_o_GND_23_o_sub_452_OUT> created at line 392.
+    Found 64-bit adder for signal <score1_t[63]_GND_23_o_add_2_OUT> created at line 145.
+    Found 12-bit adder for signal <p2_current_position_y[11]_GND_23_o_add_6_OUT> created at line 159.
+    Found 12-bit adder for signal <p1_current_position_y[11]_GND_23_o_add_8_OUT> created at line 163.
+    Found 64-bit adder for signal <score2_t[63]_GND_23_o_add_34_OUT> created at line 197.
+    Found 12-bit adder for signal <ball_current_position_x[11]_GND_23_o_add_174_OUT> created at line 566.
+    Found 12-bit adder for signal <ball_current_position_y[11]_GND_23_o_add_175_OUT> created at line 567.
+    Found 12-bit adder for signal <ball_current_position_x[11]_GND_23_o_add_180_OUT> created at line 571.
+    Found 12-bit adder for signal <ball_current_position_y[11]_GND_23_o_add_181_OUT> created at line 572.
+    Found 12-bit adder for signal <ball_current_position_y[11]_GND_23_o_add_187_OUT> created at line 577.
+    Found 12-bit adder for signal <ball_current_position_x[11]_GND_23_o_add_191_OUT> created at line 581.
+    Found 12-bit adder for signal <ball_current_position_y[11]_GND_23_o_add_192_OUT> created at line 582.
+    Found 12-bit adder for signal <ball_current_position_x[11]_GND_23_o_add_197_OUT> created at line 586.
+    Found 12-bit adder for signal <ball_current_position_x[11]_GND_23_o_add_203_OUT> created at line 591.
+    Found 12-bit adder for signal <ball_current_position_y[11]_GND_23_o_add_204_OUT> created at line 592.
+    Found 12-bit adder for signal <ball_current_position_x[11]_GND_23_o_add_208_OUT> created at line 596.
+    Found 12-bit adder for signal <ball_current_position_y[11]_GND_23_o_add_209_OUT> created at line 597.
+    Found 12-bit adder for signal <p1_current_position_x[11]_GND_23_o_add_226_OUT> created at line 624.
+    Found 13-bit adder for signal <n0995[12:0]> created at line 663.
+    Found 4-bit adder for signal <score2b[3]_GND_23_o_add_364_OUT> created at line 281.
+    Found 4-bit adder for signal <score2a[3]_GND_23_o_add_365_OUT> created at line 285.
+    Found 4-bit adder for signal <score1b[3]_GND_23_o_add_377_OUT> created at line 305.
+    Found 4-bit adder for signal <score1a[3]_GND_23_o_add_378_OUT> created at line 309.
+    Found 13-bit adder for signal <n0931> created at line 368.
+    Found 13-bit adder for signal <n0936> created at line 370.
+    Found 13-bit adder for signal <n0941> created at line 379.
+    Found 13-bit adder for signal <n0946> created at line 381.
+    Found 13-bit adder for signal <n0951> created at line 391.
+    Found 13-bit adder for signal <n0956> created at line 393.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_87_OUT<11:0>> created at line 486.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_93_OUT<11:0>> created at line 491.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_99_OUT<11:0>> created at line 496.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_104_OUT<11:0>> created at line 501.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_116_OUT<11:0>> created at line 511.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_122_OUT<11:0>> created at line 516.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_128_OUT<11:0>> created at line 523.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_133_OUT<11:0>> created at line 528.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_139_OUT<11:0>> created at line 533.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_145_OUT<11:0>> created at line 538.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_162_OUT<11:0>> created at line 553.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_168_OUT<11:0>> created at line 558.
+    Found 12-bit subtractor for signal <GND_23_o_GND_23_o_sub_250_OUT<11:0>> created at line 670.
+    Found 10-bit subtractor for signal <GND_23_o_GND_23_o_sub_354_OUT<9:0>> created at line 260.
+    Found 10-bit subtractor for signal <GND_23_o_GND_23_o_sub_358_OUT<9:0>> created at line 266.
+    Found 64-bit comparator not equal for signal <score1_t[63]_score2_t[63]_equal_2_o> created at line 144
+    Found 32-bit comparator greater for signal <GND_23_o_p1_current_position_y[11]_LessThan_13_o> created at line 170
+    Found 32-bit comparator greater for signal <p1_current_position_y[11]_GND_23_o_LessThan_15_o> created at line 173
+    Found 32-bit comparator greater for signal <GND_23_o_p2_current_position_y[11]_LessThan_17_o> created at line 176
+    Found 32-bit comparator greater for signal <p2_current_position_y[11]_GND_23_o_LessThan_19_o> created at line 179
+    Found 64-bit comparator greater for signal <score2_t[63]_score1_t[63]_LessThan_34_o> created at line 187
+    Found 10-bit comparator greater for signal <GND_23_o_angle[9]_LessThan_41_o> created at line 445
+    Found 10-bit comparator greater for signal <n0037> created at line 445
+    Found 10-bit comparator greater for signal <n0043> created at line 450
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_54_o> created at line 455
+    Found 10-bit comparator greater for signal <GND_23_o_angle[9]_LessThan_64_o> created at line 465
+    Found 10-bit comparator greater for signal <n0057> created at line 465
+    Found 10-bit comparator greater for signal <n0063> created at line 470
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_77_o> created at line 475
+    Found 10-bit comparator greater for signal <n0076> created at line 483
+    Found 10-bit comparator greater for signal <n0083> created at line 488
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_97_o> created at line 493
+    Found 10-bit comparator greater for signal <GND_23_o_angle[9]_LessThan_107_o> created at line 503
+    Found 10-bit comparator greater for signal <n0100> created at line 503
+    Found 10-bit comparator greater for signal <n0106> created at line 508
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_120_o> created at line 513
+    Found 10-bit comparator greater for signal <GND_23_o_angle[9]_LessThan_131_o> created at line 526
+    Found 10-bit comparator greater for signal <n0126> created at line 526
+    Found 10-bit comparator greater for signal <n0133> created at line 531
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_144_o> created at line 536
+    Found 10-bit comparator greater for signal <GND_23_o_angle[9]_LessThan_154_o> created at line 546
+    Found 10-bit comparator greater for signal <n0149> created at line 546
+    Found 10-bit comparator greater for signal <n0155> created at line 551
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_167_o> created at line 556
+    Found 10-bit comparator greater for signal <n0169> created at line 564
+    Found 10-bit comparator greater for signal <n0177> created at line 569
+    Found 10-bit comparator greater for signal <angle[9]_GND_23_o_LessThan_186_o> created at line 574
+    Found 10-bit comparator greater for signal <GND_23_o_angle[9]_LessThan_196_o> created at line 584
+    Found 10-bit comparator greater for signal <n0196> created at line 584
+    Found 10-bit comparator greater for signal <n0203> created at line 589
+    Found 32-bit comparator lessequal for signal <n0225> created at line 617
+    Found 32-bit comparator greater for signal <GND_23_o_p1_current_position_y[11]_LessThan_225_o> created at line 618
+    Found 32-bit comparator greater for signal <p1_current_position_y[11]_PWR_24_o_LessThan_226_o> created at line 619
+    Found 32-bit comparator greater for signal <p1_current_position_y[11]_GND_23_o_LessThan_229_o> created at line 628
+    Found 32-bit comparator greater for signal <p1_current_position_y[11]_GND_23_o_LessThan_230_o> created at line 630
+    Found 12-bit comparator greater for signal <p1_current_position_y[11]_GND_23_o_LessThan_231_o> created at line 632
+    Found 32-bit comparator greater for signal <PWR_24_o_p1_current_position_y[11]_LessThan_232_o> created at line 634
+    Found 32-bit comparator greater for signal <PWR_24_o_p1_current_position_y[11]_LessThan_233_o> created at line 636
+    Found 12-bit comparator greater for signal <GND_23_o_p1_current_position_y[11]_LessThan_234_o> created at line 638
+    Found 32-bit comparator lessequal for signal <n0250> created at line 663
+    Found 32-bit comparator greater for signal <GND_23_o_p2_current_position_y[11]_LessThan_248_o> created at line 664
+    Found 32-bit comparator greater for signal <p2_current_position_y[11]_PWR_24_o_LessThan_249_o> created at line 665
+    Found 32-bit comparator greater for signal <p2_current_position_y[11]_GND_23_o_LessThan_252_o> created at line 674
+    Found 32-bit comparator greater for signal <p2_current_position_y[11]_GND_23_o_LessThan_253_o> created at line 676
+    Found 12-bit comparator greater for signal <p2_current_position_y[11]_GND_23_o_LessThan_254_o> created at line 678
+    Found 32-bit comparator greater for signal <PWR_24_o_p2_current_position_y[11]_LessThan_255_o> created at line 680
+    Found 32-bit comparator greater for signal <PWR_24_o_p2_current_position_y[11]_LessThan_256_o> created at line 682
+    Found 12-bit comparator greater for signal <GND_23_o_p2_current_position_y[11]_LessThan_257_o> created at line 684
+    Found 32-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_270_o> created at line 721
+    Found 32-bit comparator greater for signal <GND_23_o_PWR_24_o_LessThan_271_o> created at line 722
+    Found 12-bit comparator lessequal for signal <n0279> created at line 724
+    Found 12-bit comparator greater for signal <move_xy_by_angle.nx[11]_GND_23_o_LessThan_273_o> created at line 725
+    Found 12-bit comparator lessequal for signal <n0290> created at line 744
+    Found 12-bit comparator greater for signal <GND_23_o_move_xy_by_angle.nx[11]_LessThan_289_o> created at line 745
+    Found 32-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_291_o> created at line 751
+    Found 32-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_292_o> created at line 753
+    Found 12-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_293_o> created at line 755
+    Found 32-bit comparator greater for signal <PWR_24_o_GND_23_o_LessThan_294_o> created at line 757
+    Found 32-bit comparator greater for signal <PWR_24_o_GND_23_o_LessThan_295_o> created at line 759
+    Found 12-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_296_o> created at line 761
+    Found 32-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_313_o> created at line 721
+    Found 32-bit comparator greater for signal <GND_23_o_PWR_24_o_LessThan_314_o> created at line 722
+    Found 12-bit comparator lessequal for signal <n0320> created at line 724
+    Found 12-bit comparator greater for signal <move_xy_by_angle.nx[11]_GND_23_o_LessThan_316_o> created at line 725
+    Found 12-bit comparator lessequal for signal <n0331> created at line 744
+    Found 12-bit comparator greater for signal <GND_23_o_move_xy_by_angle.nx[11]_LessThan_332_o> created at line 745
+    Found 32-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_334_o> created at line 751
+    Found 32-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_335_o> created at line 753
+    Found 12-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_336_o> created at line 755
+    Found 32-bit comparator greater for signal <PWR_24_o_GND_23_o_LessThan_337_o> created at line 757
+    Found 32-bit comparator greater for signal <PWR_24_o_GND_23_o_LessThan_338_o> created at line 759
+    Found 12-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_339_o> created at line 761
+    Found 32-bit comparator greater for signal <GND_23_o_move_xy_by_angle.ny[11]_LessThan_353_o> created at line 257
+    Found 32-bit comparator greater for signal <move_xy_by_angle.ny[11]_GND_23_o_LessThan_357_o> created at line 263
+    Found 32-bit comparator greater for signal <GND_23_o_move_xy_by_angle.nx[11]_LessThan_361_o> created at line 270
+    Found 32-bit comparator greater for signal <move_xy_by_angle.nx[11]_GND_23_o_LessThan_374_o> created at line 294
+    Found 32-bit comparator lessequal for signal <n0451> created at line 367
+    Found 13-bit comparator lessequal for signal <n0454> created at line 368
+    Found 32-bit comparator lessequal for signal <n0458> created at line 369
+    Found 13-bit comparator lessequal for signal <n0462> created at line 370
+    Found 32-bit comparator lessequal for signal <n0466> created at line 378
+    Found 13-bit comparator lessequal for signal <n0469> created at line 379
+    Found 32-bit comparator lessequal for signal <n0473> created at line 380
+    Found 13-bit comparator lessequal for signal <n0477> created at line 381
+    Found 32-bit comparator lessequal for signal <n0481> created at line 390
+    Found 13-bit comparator lessequal for signal <n0485> created at line 391
+    Found 32-bit comparator lessequal for signal <n0489> created at line 392
+    Found 13-bit comparator lessequal for signal <n0493> created at line 393
+    Found 11-bit comparator lessequal for signal <n0496> created at line 401
+    Found 11-bit comparator lessequal for signal <n0498> created at line 402
+    Found 11-bit comparator lessequal for signal <n0501> created at line 404
+    Found 11-bit comparator lessequal for signal <n0504> created at line 412
+    Found 11-bit comparator lessequal for signal <n0506> created at line 413
+    Found 11-bit comparator lessequal for signal <n0509> created at line 414
+    Found 11-bit comparator lessequal for signal <n0512> created at line 415
+    Summary:
+	inferred  56 Adder/Subtractor(s).
+	inferred 295 D-type flip-flop(s).
+	inferred 100 Comparator(s).
+	inferred 164 Multiplexer(s).
+Unit <game_logic> synthesized.
+
+Synthesizing Unit <graphics>.
+    Related source file is "F:\RWPONG\graphics.v".
+        X_MAX = 800
+        Y_MAX = 600
+        DIGIT_WIDTH = 30
+        DIGIT_WIDTH_HALF = 15
+        DIGIT_THICKNESS = 2
+        DIGIT_THICKNESS_HALF = 1
+        SCORE_PADDING = 5
+        SCORE_1_X = 200
+        SCORE_2_X = 600
+        SCORE_1A_X = 220
+        SCORE_1B_X = 180
+        SCORE_2A_X = 620
+        SCORE_2B_X = 580
+        SCORE_Y = 200
+        BALL_WIDTH = 6
+        BALL_WIDTH_HALF = 3
+        PLAYER_WIDTH = 6
+        PLAYER_WIDTH_HALF = 3
+        PLAYER_HEIGHT = 40
+        PLAYER_HEIGHT_HALF = 20
+        OBSTACLE_WIDTH = 20
+        OBSTACLE_WIDTH_HALF = 10
+        OBSTACLE_HEIGHT = 150
+        OBSTACLE_HEIGHT_HALF = 75
+        OBSTACLE1_X = 300
+        OBSTACLE1_Y = 75
+        OBSTACLE2_X = 500
+        OBSTACLE2_Y = 525
+        BALL_INITIAL_POSITION_X = 400
+        BALL_INITIAL_POSITION_Y = 300
+        P1_INITIAL_POSITION_X = 20
+        P1_INITIAL_POSITION_Y = 300
+        P2_INITIAL_POSITION_X = 780
+        P2_INITIAL_POSITION_Y = 300
+        TOP_BOUNDARY = 3
+        LEFT_BOUNDARY = 3
+        BOTTOM_BOUNDARY = 597
+        RIGHT_BOUNDARY = 797
+        PLAYER_TOP_BOUNDARY = 20
+        PLAYER_BOTTOM_BOUNDARY = 580
+        DIGIT_R = 3'b111
+        DIGIT_G = 3'b111
+        DIGIT_B = 2'b11
+    Register <vgaRed> equivalent to <vgaGreen> has been removed
+    Found 3-bit register for signal <vgaGreen>.
+    Found 2-bit register for signal <vgaBlue>.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_5_OUT> created at line 274.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_10_OUT> created at line 276.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_14_OUT> created at line 286.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_19_OUT> created at line 288.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_23_OUT> created at line 297.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_28_OUT> created at line 299.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_32_OUT> created at line 308.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_37_OUT> created at line 310.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_41_OUT> created at line 319.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_46_OUT> created at line 321.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_50_OUT> created at line 330.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_55_OUT> created at line 332.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_59_OUT> created at line 341.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_64_OUT> created at line 343.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_68_OUT> created at line 354.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_73_OUT> created at line 356.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_77_OUT> created at line 366.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_82_OUT> created at line 368.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_86_OUT> created at line 377.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_91_OUT> created at line 379.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_95_OUT> created at line 388.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_100_OUT> created at line 390.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_104_OUT> created at line 399.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_109_OUT> created at line 401.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_113_OUT> created at line 410.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_118_OUT> created at line 412.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_122_OUT> created at line 421.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_127_OUT> created at line 423.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_131_OUT> created at line 434.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_136_OUT> created at line 436.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_140_OUT> created at line 446.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_145_OUT> created at line 448.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_149_OUT> created at line 457.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_154_OUT> created at line 459.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_158_OUT> created at line 468.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_163_OUT> created at line 470.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_167_OUT> created at line 479.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_172_OUT> created at line 481.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_176_OUT> created at line 490.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_181_OUT> created at line 492.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_185_OUT> created at line 501.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_190_OUT> created at line 503.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_194_OUT> created at line 514.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_199_OUT> created at line 516.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_203_OUT> created at line 526.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_208_OUT> created at line 528.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_212_OUT> created at line 537.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_217_OUT> created at line 539.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_221_OUT> created at line 548.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_226_OUT> created at line 550.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_230_OUT> created at line 559.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_235_OUT> created at line 561.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_239_OUT> created at line 570.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_244_OUT> created at line 572.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_248_OUT> created at line 581.
+    Found 13-bit subtractor for signal <GND_24_o_GND_24_o_sub_253_OUT> created at line 583.
+    Found 13-bit adder for signal <n0793> created at line 275.
+    Found 13-bit adder for signal <n0798> created at line 277.
+    Found 13-bit adder for signal <n0804> created at line 287.
+    Found 13-bit adder for signal <n0809> created at line 289.
+    Found 13-bit adder for signal <n0815> created at line 298.
+    Found 13-bit adder for signal <n0820> created at line 300.
+    Found 13-bit adder for signal <n0826> created at line 309.
+    Found 13-bit adder for signal <n0831> created at line 311.
+    Found 13-bit adder for signal <n0837> created at line 320.
+    Found 13-bit adder for signal <n0842> created at line 322.
+    Found 13-bit adder for signal <n0848> created at line 331.
+    Found 13-bit adder for signal <n0853> created at line 333.
+    Found 13-bit adder for signal <n0859> created at line 342.
+    Found 13-bit adder for signal <n0864> created at line 344.
+    Found 13-bit adder for signal <n0870> created at line 355.
+    Found 13-bit adder for signal <n0875> created at line 357.
+    Found 13-bit adder for signal <n0881> created at line 367.
+    Found 13-bit adder for signal <n0886> created at line 369.
+    Found 13-bit adder for signal <n0892> created at line 378.
+    Found 13-bit adder for signal <n0897> created at line 380.
+    Found 13-bit adder for signal <n0903> created at line 389.
+    Found 13-bit adder for signal <n0908> created at line 391.
+    Found 13-bit adder for signal <n0914> created at line 400.
+    Found 13-bit adder for signal <n0919> created at line 402.
+    Found 13-bit adder for signal <n0925> created at line 411.
+    Found 13-bit adder for signal <n0930> created at line 413.
+    Found 13-bit adder for signal <n0936> created at line 422.
+    Found 13-bit adder for signal <n0941> created at line 424.
+    Found 13-bit adder for signal <n0947> created at line 435.
+    Found 13-bit adder for signal <n0952> created at line 437.
+    Found 13-bit adder for signal <n0958> created at line 447.
+    Found 13-bit adder for signal <n0963> created at line 449.
+    Found 13-bit adder for signal <n0969> created at line 458.
+    Found 13-bit adder for signal <n0974> created at line 460.
+    Found 13-bit adder for signal <n0980> created at line 469.
+    Found 13-bit adder for signal <n0985> created at line 471.
+    Found 13-bit adder for signal <n0991> created at line 480.
+    Found 13-bit adder for signal <n0996> created at line 482.
+    Found 13-bit adder for signal <n1002> created at line 491.
+    Found 13-bit adder for signal <n1007> created at line 493.
+    Found 13-bit adder for signal <n1013> created at line 502.
+    Found 13-bit adder for signal <n1018> created at line 504.
+    Found 13-bit adder for signal <n1024> created at line 515.
+    Found 13-bit adder for signal <n1029> created at line 517.
+    Found 13-bit adder for signal <n1035> created at line 527.
+    Found 13-bit adder for signal <n1040> created at line 529.
+    Found 13-bit adder for signal <n1046> created at line 538.
+    Found 13-bit adder for signal <n1051> created at line 540.
+    Found 13-bit adder for signal <n1057> created at line 549.
+    Found 13-bit adder for signal <n1062> created at line 551.
+    Found 13-bit adder for signal <n1068> created at line 560.
+    Found 13-bit adder for signal <n1073> created at line 562.
+    Found 13-bit adder for signal <n1079> created at line 571.
+    Found 13-bit adder for signal <n1084> created at line 573.
+    Found 13-bit adder for signal <n1090> created at line 582.
+    Found 13-bit adder for signal <n1095> created at line 584.
+    Found 11-bit comparator lessequal for signal <n0000> created at line 262
+    Found 11-bit comparator lessequal for signal <n0002> created at line 263
+    Found 11-bit comparator lessequal for signal <n0005> created at line 265
+    Found 32-bit comparator lessequal for signal <n0009> created at line 274
+    Found 13-bit comparator lessequal for signal <n0014> created at line 275
+    Found 32-bit comparator lessequal for signal <n0018> created at line 276
+    Found 13-bit comparator lessequal for signal <n0022> created at line 277
+    Found 32-bit comparator lessequal for signal <n0026> created at line 286
+    Found 13-bit comparator lessequal for signal <n0031> created at line 287
+    Found 32-bit comparator lessequal for signal <n0035> created at line 288
+    Found 13-bit comparator lessequal for signal <n0039> created at line 289
+    Found 32-bit comparator lessequal for signal <n0043> created at line 297
+    Found 13-bit comparator lessequal for signal <n0048> created at line 298
+    Found 32-bit comparator lessequal for signal <n0052> created at line 299
+    Found 13-bit comparator lessequal for signal <n0056> created at line 300
+    Found 32-bit comparator lessequal for signal <n0060> created at line 308
+    Found 13-bit comparator lessequal for signal <n0065> created at line 309
+    Found 32-bit comparator lessequal for signal <n0069> created at line 310
+    Found 13-bit comparator lessequal for signal <n0073> created at line 311
+    Found 32-bit comparator lessequal for signal <n0077> created at line 319
+    Found 13-bit comparator lessequal for signal <n0082> created at line 320
+    Found 32-bit comparator lessequal for signal <n0086> created at line 321
+    Found 13-bit comparator lessequal for signal <n0090> created at line 322
+    Found 32-bit comparator lessequal for signal <n0094> created at line 330
+    Found 13-bit comparator lessequal for signal <n0099> created at line 331
+    Found 32-bit comparator lessequal for signal <n0103> created at line 332
+    Found 13-bit comparator lessequal for signal <n0107> created at line 333
+    Found 32-bit comparator lessequal for signal <n0111> created at line 341
+    Found 13-bit comparator lessequal for signal <n0116> created at line 342
+    Found 32-bit comparator lessequal for signal <n0120> created at line 343
+    Found 13-bit comparator lessequal for signal <n0124> created at line 344
+    Found 32-bit comparator lessequal for signal <n0128> created at line 354
+    Found 13-bit comparator lessequal for signal <n0133> created at line 355
+    Found 32-bit comparator lessequal for signal <n0137> created at line 356
+    Found 13-bit comparator lessequal for signal <n0141> created at line 357
+    Found 32-bit comparator lessequal for signal <n0145> created at line 366
+    Found 13-bit comparator lessequal for signal <n0150> created at line 367
+    Found 32-bit comparator lessequal for signal <n0154> created at line 368
+    Found 13-bit comparator lessequal for signal <n0158> created at line 369
+    Found 32-bit comparator lessequal for signal <n0162> created at line 377
+    Found 13-bit comparator lessequal for signal <n0167> created at line 378
+    Found 32-bit comparator lessequal for signal <n0171> created at line 379
+    Found 13-bit comparator lessequal for signal <n0175> created at line 380
+    Found 32-bit comparator lessequal for signal <n0179> created at line 388
+    Found 13-bit comparator lessequal for signal <n0184> created at line 389
+    Found 32-bit comparator lessequal for signal <n0188> created at line 390
+    Found 13-bit comparator lessequal for signal <n0192> created at line 391
+    Found 32-bit comparator lessequal for signal <n0196> created at line 399
+    Found 13-bit comparator lessequal for signal <n0201> created at line 400
+    Found 32-bit comparator lessequal for signal <n0205> created at line 401
+    Found 13-bit comparator lessequal for signal <n0209> created at line 402
+    Found 32-bit comparator lessequal for signal <n0213> created at line 410
+    Found 13-bit comparator lessequal for signal <n0218> created at line 411
+    Found 32-bit comparator lessequal for signal <n0222> created at line 412
+    Found 13-bit comparator lessequal for signal <n0226> created at line 413
+    Found 32-bit comparator lessequal for signal <n0230> created at line 421
+    Found 13-bit comparator lessequal for signal <n0235> created at line 422
+    Found 32-bit comparator lessequal for signal <n0239> created at line 423
+    Found 13-bit comparator lessequal for signal <n0243> created at line 424
+    Found 32-bit comparator lessequal for signal <n0247> created at line 434
+    Found 13-bit comparator lessequal for signal <n0252> created at line 435
+    Found 32-bit comparator lessequal for signal <n0256> created at line 436
+    Found 13-bit comparator lessequal for signal <n0260> created at line 437
+    Found 32-bit comparator lessequal for signal <n0264> created at line 446
+    Found 13-bit comparator lessequal for signal <n0269> created at line 447
+    Found 32-bit comparator lessequal for signal <n0273> created at line 448
+    Found 13-bit comparator lessequal for signal <n0277> created at line 449
+    Found 32-bit comparator lessequal for signal <n0281> created at line 457
+    Found 13-bit comparator lessequal for signal <n0286> created at line 458
+    Found 32-bit comparator lessequal for signal <n0290> created at line 459
+    Found 13-bit comparator lessequal for signal <n0294> created at line 460
+    Found 32-bit comparator lessequal for signal <n0298> created at line 468
+    Found 13-bit comparator lessequal for signal <n0303> created at line 469
+    Found 32-bit comparator lessequal for signal <n0307> created at line 470
+    Found 13-bit comparator lessequal for signal <n0311> created at line 471
+    Found 32-bit comparator lessequal for signal <n0315> created at line 479
+    Found 13-bit comparator lessequal for signal <n0320> created at line 480
+    Found 32-bit comparator lessequal for signal <n0324> created at line 481
+    Found 13-bit comparator lessequal for signal <n0328> created at line 482
+    Found 32-bit comparator lessequal for signal <n0332> created at line 490
+    Found 13-bit comparator lessequal for signal <n0337> created at line 491
+    Found 32-bit comparator lessequal for signal <n0341> created at line 492
+    Found 13-bit comparator lessequal for signal <n0345> created at line 493
+    Found 32-bit comparator lessequal for signal <n0349> created at line 501
+    Found 13-bit comparator lessequal for signal <n0354> created at line 502
+    Found 32-bit comparator lessequal for signal <n0358> created at line 503
+    Found 13-bit comparator lessequal for signal <n0362> created at line 504
+    Found 32-bit comparator lessequal for signal <n0366> created at line 514
+    Found 13-bit comparator lessequal for signal <n0371> created at line 515
+    Found 32-bit comparator lessequal for signal <n0375> created at line 516
+    Found 13-bit comparator lessequal for signal <n0379> created at line 517
+    Found 32-bit comparator lessequal for signal <n0383> created at line 526
+    Found 13-bit comparator lessequal for signal <n0388> created at line 527
+    Found 32-bit comparator lessequal for signal <n0392> created at line 528
+    Found 13-bit comparator lessequal for signal <n0396> created at line 529
+    Found 32-bit comparator lessequal for signal <n0400> created at line 537
+    Found 13-bit comparator lessequal for signal <n0405> created at line 538
+    Found 32-bit comparator lessequal for signal <n0409> created at line 539
+    Found 13-bit comparator lessequal for signal <n0413> created at line 540
+    Found 32-bit comparator lessequal for signal <n0417> created at line 548
+    Found 13-bit comparator lessequal for signal <n0422> created at line 549
+    Found 32-bit comparator lessequal for signal <n0426> created at line 550
+    Found 13-bit comparator lessequal for signal <n0430> created at line 551
+    Found 32-bit comparator lessequal for signal <n0434> created at line 559
+    Found 13-bit comparator lessequal for signal <n0439> created at line 560
+    Found 32-bit comparator lessequal for signal <n0443> created at line 561
+    Found 13-bit comparator lessequal for signal <n0447> created at line 562
+    Found 32-bit comparator lessequal for signal <n0451> created at line 570
+    Found 13-bit comparator lessequal for signal <n0456> created at line 571
+    Found 32-bit comparator lessequal for signal <n0460> created at line 572
+    Found 13-bit comparator lessequal for signal <n0464> created at line 573
+    Found 32-bit comparator lessequal for signal <n0468> created at line 581
+    Found 13-bit comparator lessequal for signal <n0473> created at line 582
+    Found 32-bit comparator lessequal for signal <n0477> created at line 583
+    Found 13-bit comparator lessequal for signal <n0481> created at line 584
+    Summary:
+	inferred 112 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred 115 Comparator(s).
+Unit <graphics> synthesized.
+
+Synthesizing Unit <score_segment_xy>.
+    Related source file is "F:\RWPONG\score_segment_xy.v".
+        WIDTH = 30
+        HEIGHT = 30
+    Found 12-bit adder for signal <x1> created at line 53.
+    Found 12-bit adder for signal <y2> created at line 57.
+    Found 12-bit adder for signal <y3> created at line 60.
+    Found 12-bit subtractor for signal <y0> created at line 26.
+    Found 12-bit subtractor for signal <y1> created at line 29.
+    Found 12-bit subtractor for signal <x4> created at line 37.
+    Summary:
+	inferred   6 Adder/Subtractor(s).
+Unit <score_segment_xy> synthesized.
+
+Synthesizing Unit <score_segment_control>.
+    Related source file is "F:\RWPONG\score_segment_control.v".
+    Found 16x7-bit Read Only RAM for signal <_n0024>
+    Summary:
+	inferred   1 RAM(s).
+Unit <score_segment_control> synthesized.
+
+Synthesizing Unit <mod_N_counter_10>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 31'b0000000000000100010001011100000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_335_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_10> synthesized.
+
+Synthesizing Unit <clock_N_Hz_10>.
+    Related source file is "F:\RWPONG\clock_N_Hz.v".
+        N = 1
+INFO:Xst:3210 - "F:\RWPONG\clock_N_Hz.v" line 33: Output port <count> of the instance <mod_N_counter_> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cout>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clock_N_Hz_10> synthesized.
+
+Synthesizing Unit <mod_N_counter_11>.
+    Related source file is "F:\RWPONG\mod_N_counter.v".
+        N = 50000000
+    Found 1-bit register for signal <tc>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_337_o_add_3_OUT> created at line 46.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <mod_N_counter_11> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 16x7-bit single-port Read Only RAM                    : 4
+# Adders/Subtractors                                   : 208
+ 10-bit subtractor                                     : 2
+ 11-bit adder                                          : 2
+ 11-bit subtractor                                     : 2
+ 12-bit adder                                          : 27
+ 12-bit subtractor                                     : 31
+ 13-bit adder                                          : 63
+ 13-bit subtractor                                     : 63
+ 2-bit adder                                           : 1
+ 32-bit adder                                          : 11
+ 4-bit adder                                           : 4
+ 64-bit adder                                          : 2
+# Registers                                            : 66
+ 1-bit register                                        : 26
+ 10-bit register                                       : 4
+ 11-bit register                                       : 4
+ 12-bit register                                       : 9
+ 2-bit register                                        : 3
+ 3-bit register                                        : 3
+ 32-bit register                                       : 11
+ 4-bit register                                        : 4
+ 64-bit register                                       : 2
+# Comparators                                          : 221
+ 10-bit comparator greater                             : 29
+ 11-bit comparator greater                             : 6
+ 11-bit comparator lessequal                           : 10
+ 12-bit comparator greater                             : 12
+ 12-bit comparator lessequal                           : 4
+ 13-bit comparator lessequal                           : 62
+ 32-bit comparator greater                             : 32
+ 32-bit comparator lessequal                           : 64
+ 64-bit comparator greater                             : 1
+ 64-bit comparator not equal                           : 1
+# Multiplexers                                         : 173
+ 1-bit 2-to-1 multiplexer                              : 16
+ 10-bit 2-to-1 multiplexer                             : 52
+ 12-bit 2-to-1 multiplexer                             : 89
+ 2-bit 2-to-1 multiplexer                              : 6
+ 3-bit 2-to-1 multiplexer                              : 10
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <vgaGreen_0> in Unit <graphics_> is equivalent to the following 4 FFs/Latches, which will be removed : <vgaGreen_1> <vgaGreen_2> <vgaBlue_0> <vgaBlue_1> 
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_11> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_10> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_9> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_8> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_7> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_6> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_5> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_4> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_3> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_2> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_1> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p2_current_position_x_0> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_11> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_10> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_9> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_8> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_7> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_6> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_5> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_4> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_3> has a constant value of 0 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_2> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_1> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_0> has a constant value of 1 in block <game_logic_>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <clock>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <clock> synthesized (advanced).
+
+Synthesizing (advanced) Unit <game_logic>.
+The following registers are absorbed into counter <score1_t>: 1 register on signal <score1_t>.
+The following registers are absorbed into counter <score2_t>: 1 register on signal <score2_t>.
+The following registers are absorbed into counter <score1b>: 1 register on signal <score1b>.
+The following registers are absorbed into counter <score2b>: 1 register on signal <score2b>.
+The following registers are absorbed into counter <score1a>: 1 register on signal <score1a>.
+The following registers are absorbed into counter <score2a>: 1 register on signal <score2a>.
+Unit <game_logic> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_1>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_10>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_10> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_11>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_11> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_2>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_3>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_4>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_4> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_5>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_5> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_6>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_6> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_7>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_7> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_8>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_8> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mod_N_counter_9>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <mod_N_counter_9> synthesized (advanced).
+
+Synthesizing (advanced) Unit <score_segment_control>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0024> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <score>         |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <score_segment_control> synthesized (advanced).
+
+Synthesizing (advanced) Unit <vga_controller>.
+The following registers are absorbed into counter <horizontal_counter>: 1 register on signal <horizontal_counter>.
+The following registers are absorbed into counter <vertical_counter>: 1 register on signal <vertical_counter>.
+Unit <vga_controller> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 16x7-bit single-port distributed Read Only RAM        : 4
+# Adders/Subtractors                                   : 188
+ 10-bit subtractor                                     : 2
+ 11-bit subtractor                                     : 2
+ 12-bit adder                                          : 27
+ 12-bit subtractor                                     : 31
+ 13-bit adder                                          : 63
+ 13-bit subtractor                                     : 63
+# Counters                                             : 20
+ 11-bit up counter                                     : 2
+ 2-bit up counter                                      : 1
+ 32-bit up counter                                     : 11
+ 4-bit up counter                                      : 4
+ 64-bit up counter                                     : 2
+# Registers                                            : 209
+ Flip-Flops                                            : 209
+# Comparators                                          : 221
+ 10-bit comparator greater                             : 29
+ 11-bit comparator greater                             : 6
+ 11-bit comparator lessequal                           : 10
+ 12-bit comparator greater                             : 12
+ 12-bit comparator lessequal                           : 4
+ 13-bit comparator lessequal                           : 62
+ 32-bit comparator greater                             : 32
+ 32-bit comparator lessequal                           : 64
+ 64-bit comparator greater                             : 1
+ 64-bit comparator not equal                           : 1
+# Multiplexers                                         : 172
+ 1-bit 2-to-1 multiplexer                              : 16
+ 10-bit 2-to-1 multiplexer                             : 52
+ 12-bit 2-to-1 multiplexer                             : 89
+ 2-bit 2-to-1 multiplexer                              : 5
+ 3-bit 2-to-1 multiplexer                              : 10
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <p1_current_position_x_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_9> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_8> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_7> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_6> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_5> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_4> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_3> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_2> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_1> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_x_0> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_9> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_8> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_7> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_6> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_5> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_4> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_3> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_2> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_1> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_x_0> has a constant value of 1 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <vgaGreen_0> in Unit <graphics> is equivalent to the following 4 FFs/Latches, which will be removed : <vgaGreen_1> <vgaGreen_2> <vgaBlue_0> <vgaBlue_1> 
+
+Optimizing unit <pong> ...
+
+Optimizing unit <ball_clock> ...
+
+Optimizing unit <game_logic> ...
+WARNING:Xst:1293 - FF/Latch <ball_current_position_y_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_current_position_y_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_current_position_x_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_current_position_x_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_y_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_y_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_y_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_y_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ball_current_position_y_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_current_position_y_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_current_position_x_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ball_current_position_x_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_y_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p2_current_position_y_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_y_10> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <p1_current_position_y_11> has a constant value of 0 in block <game_logic>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <graphics> ...
+
+Optimizing unit <vga_controller> ...
+INFO:Xst:2261 - The FF/Latch <vgaGreen_1> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <vgaGreen_2> 
+INFO:Xst:2261 - The FF/Latch <ball_clock_/cbx/mod_N_counter_/count_1> in Unit <pong> is equivalent to the following 6 FFs/Latches, which will be removed : <ball_clock_/cb3/mod_N_counter_/count_1> <ball_clock_/cb2/mod_N_counter_/count_1> <ball_clock_/cb4/mod_N_counter_/count_1> <ball_clock_/cb5/mod_N_counter_/count_1> <ball_clock_/cb6/mod_N_counter_/count_1> <ball_clock_/cb7/mod_N_counter_/count_1> 
+INFO:Xst:2261 - The FF/Latch <ball_clock_/cbx/mod_N_counter_/count_2> in Unit <pong> is equivalent to the following 5 FFs/Latches, which will be removed : <ball_clock_/cb3/mod_N_counter_/count_2> <ball_clock_/cb2/mod_N_counter_/count_2> <ball_clock_/cb5/mod_N_counter_/count_2> <ball_clock_/cb6/mod_N_counter_/count_2> <ball_clock_/cb7/mod_N_counter_/count_2> 
+INFO:Xst:2261 - The FF/Latch <ball_clock_/cbx/mod_N_counter_/count_3> in Unit <pong> is equivalent to the following 5 FFs/Latches, which will be removed : <ball_clock_/cb3/mod_N_counter_/count_3> <ball_clock_/cb2/mod_N_counter_/count_3> <ball_clock_/cb5/mod_N_counter_/count_3> <ball_clock_/cb6/mod_N_counter_/count_3> <ball_clock_/cb7/mod_N_counter_/count_3> 
+INFO:Xst:2261 - The FF/Latch <ball_clock_/cbx/mod_N_counter_/count_4> in Unit <pong> is equivalent to the following 4 FFs/Latches, which will be removed : <ball_clock_/cb3/mod_N_counter_/count_4> <ball_clock_/cb2/mod_N_counter_/count_4> <ball_clock_/cb5/mod_N_counter_/count_4> <ball_clock_/cb6/mod_N_counter_/count_4> 
+INFO:Xst:2261 - The FF/Latch <vgaRed_1> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <vgaRed_2> 
+INFO:Xst:2261 - The FF/Latch <ball_clock_/cbx/mod_N_counter_/count_5> in Unit <pong> is equivalent to the following 2 FFs/Latches, which will be removed : <ball_clock_/cb3/mod_N_counter_/count_5> <ball_clock_/cb5/mod_N_counter_/count_5> 
+INFO:Xst:2261 - The FF/Latch <game_logic_/clock_1Hz/mod_N_counter_/count_0> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <game_logic_/mnc1/count_0> 
+INFO:Xst:2261 - The FF/Latch <game_logic_/clock_1Hz/mod_N_counter_/count_1> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <game_logic_/mnc1/count_1> 
+INFO:Xst:2261 - The FF/Latch <game_logic_/clock_1Hz/mod_N_counter_/count_2> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <game_logic_/mnc1/count_2> 
+INFO:Xst:2261 - The FF/Latch <game_logic_/clock_1Hz/mod_N_counter_/count_3> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <game_logic_/mnc1/count_3> 
+INFO:Xst:2261 - The FF/Latch <game_logic_/clock_1Hz/mod_N_counter_/count_4> in Unit <pong> is equivalent to the following FF/Latch, which will be removed : <game_logic_/mnc1/count_4> 
+INFO:Xst:2261 - The FF/Latch <clock_50mhz/counter_0> in Unit <pong> is equivalent to the following 7 FFs/Latches, which will be removed : <ball_clock_/cbx/mod_N_counter_/count_0> <ball_clock_/cb3/mod_N_counter_/count_0> <ball_clock_/cb2/mod_N_counter_/count_0> <ball_clock_/cb4/mod_N_counter_/count_0> <ball_clock_/cb5/mod_N_counter_/count_0> <ball_clock_/cb6/mod_N_counter_/count_0> <ball_clock_/cb7/mod_N_counter_/count_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block pong, actual ratio is 27.
+FlipFlop game_logic_/angle_0 has been replicated 1 time(s)
+FlipFlop game_logic_/angle_1 has been replicated 1 time(s)
+FlipFlop game_logic_/angle_2 has been replicated 3 time(s)
+FlipFlop game_logic_/angle_3 has been replicated 2 time(s)
+FlipFlop game_logic_/angle_4 has been replicated 2 time(s)
+FlipFlop game_logic_/angle_5 has been replicated 2 time(s)
+FlipFlop game_logic_/angle_6 has been replicated 1 time(s)
+FlipFlop game_logic_/angle_7 has been replicated 1 time(s)
+FlipFlop game_logic_/angle_8 has been replicated 2 time(s)
+FlipFlop game_logic_/angle_9 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 668
+ Flip-Flops                                            : 668
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : pong.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 4180
+#      GND                         : 1
+#      INV                         : 131
+#      LUT1                        : 588
+#      LUT2                        : 118
+#      LUT3                        : 132
+#      LUT4                        : 296
+#      LUT5                        : 257
+#      LUT6                        : 1027
+#      MUXCY                       : 839
+#      MUXF7                       : 41
+#      VCC                         : 1
+#      XORCY                       : 749
+# FlipFlops/Latches                : 668
+#      FD                          : 60
+#      FDE                         : 198
+#      FDR                         : 359
+#      FDRE                        : 36
+#      FDS                         : 1
+#      FDSE                        : 14
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 13
+#      OBUF                        : 10
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             668  out of  18224     3%  
+ Number of Slice LUTs:                 2549  out of   9112    27%  
+    Number used as Logic:              2549  out of   9112    27%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2660
+   Number with an unused Flip Flop:    1992  out of   2660    74%  
+   Number with an unused LUT:           111  out of   2660     4%  
+   Number of fully used LUT-FF pairs:   557  out of   2660    20%  
+   Number of unique control sets:        38
+
+IO Utilization: 
+ Number of IOs:                          24
+ Number of bonded IOBs:                  24  out of    232    10%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------+-------------------------------+-------+
+Clock Signal                           | Clock buffer(FF name)         | Load  |
+---------------------------------------+-------------------------------+-------+
+clock_50mhz/counter_1                  | BUFG                          | 52    |
+clk                                    | BUFGP                         | 426   |
+clk_ball(ball_clock_/Mmux_clk_ball34:O)| BUFG(*)(game_logic_/score2b_3)| 190   |
+---------------------------------------+-------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 24.100ns (Maximum Frequency: 41.494MHz)
+   Minimum input arrival time before clock: 9.834ns
+   Maximum output required time after clock: 6.114ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_50mhz/counter_1'
+  Clock period: 6.471ns (frequency: 154.537MHz)
+  Total number of paths / destination ports: 2918 / 113
+-------------------------------------------------------------------------
+Delay:               6.471ns (Levels of Logic = 5)
+  Source:            vga_controller_/pixel_y_8 (FF)
+  Destination:       vgaBlue_0 (FF)
+  Source Clock:      clock_50mhz/counter_1 rising
+  Destination Clock: clock_50mhz/counter_1 rising
+
+  Data Path: vga_controller_/pixel_y_8 to vgaBlue_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             21   0.447   1.361  vga_controller_/pixel_y_8 (vga_controller_/pixel_y_8)
+     LUT4:I0->O            1   0.203   0.944  game_logic_/vgaRed<2>16 (game_logic_/vgaRed<2>16)
+     LUT6:I0->O            1   0.203   0.944  game_logic_/vgaRed<2>17 (game_logic_/vgaRed<2>17)
+     LUT6:I0->O            1   0.203   0.808  game_logic_/vgaRed<2>19 (game_logic_/vgaRed<2>19)
+     LUT6:I3->O            6   0.205   0.849  game_logic_/vgaRed<2>110 (game_logic_/vgaRed<2>1)
+     LUT5:I3->O            1   0.203   0.000  game_logic_/Mmux_vgaRed11 (R<0>)
+     FDR:D                     0.102          vgaRed_0
+    ----------------------------------------
+    Total                      6.471ns (1.566ns logic, 4.905ns route)
+                                       (24.2% logic, 75.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.423ns (frequency: 106.122MHz)
+  Total number of paths / destination ports: 39807 / 837
+-------------------------------------------------------------------------
+Delay:               9.423ns (Levels of Logic = 18)
+  Source:            game_logic_/p2_current_position_y_2 (FF)
+  Destination:       game_logic_/p2_current_position_y_4 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: game_logic_/p2_current_position_y_2 to game_logic_/p2_current_position_y_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDSE:C->Q            15   0.447   0.982  game_logic_/p2_current_position_y_2 (game_logic_/p2_current_position_y_2)
+     LUT1:I0->O            1   0.205   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<2>_rt (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<2>_rt)
+     MUXCY:S->O            1   0.172   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<2> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<3> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<4> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<5> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<6> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<7> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<8> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<8>)
+     MUXCY:CI->O           0   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<9> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<9>)
+     XORCY:CI->O           4   0.180   0.683  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_xor<10> (game_logic_/p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT<10>)
+     INV:I->O              1   0.206   0.000  game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_lut<10>_INV_0 (game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_lut<10>)
+     MUXCY:S->O            0   0.172   0.000  game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_cy<10> (game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_cy<10>)
+     XORCY:CI->O          10   0.180   1.201  game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_xor<11> (game_logic_/p2_current_position_y[11]_GND_23_o_sub_11_OUT<11>)
+     LUT6:I1->O            1   0.203   0.944  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o222 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o222)
+     LUT6:I0->O            1   0.203   0.924  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o223 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o223)
+     LUT6:I1->O            5   0.203   0.819  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o224 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o224)
+     LUT6:I4->O            5   0.203   1.059  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o225 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o22)
+     LUT5:I0->O            1   0.203   0.000  game_logic_/Mmux_p2_current_position_y[11]_GND_23_o_mux_19_OUT71 (game_logic_/p2_current_position_y[11]_GND_23_o_mux_19_OUT<4>)
+     FDRE:D                    0.102          game_logic_/p2_current_position_y_4
+    ----------------------------------------
+    Total                      9.423ns (2.812ns logic, 6.611ns route)
+                                       (29.8% logic, 70.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_ball'
+  Clock period: 24.100ns (frequency: 41.494MHz)
+  Total number of paths / destination ports: 36316573507270 / 350
+-------------------------------------------------------------------------
+Delay:               24.100ns (Levels of Logic = 27)
+  Source:            game_logic_/angle_2_2 (FF)
+  Destination:       game_logic_/ball_dir (FF)
+  Source Clock:      clk_ball rising
+  Destination Clock: clk_ball rising
+
+  Data Path: game_logic_/angle_2_2 to game_logic_/ball_dir
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.447   0.849  game_logic_/angle_2_2 (game_logic_/angle_2_2)
+     LUT2:I0->O           11   0.203   1.111  game_logic_/n020321 (game_logic_/n02032)
+     LUT6:I3->O           16   0.205   1.005  game_logic_/GND_23_o_angle[9]_AND_135_o1 (game_logic_/GND_23_o_angle[9]_AND_135_o)
+     LUT6:I5->O           16   0.205   1.005  game_logic_/Mmux_move_xy_by_angle.nx[11]_move_xy_by_angle.nx[11]_mux_218_OUT1042 (game_logic_/Mmux_move_xy_by_angle.nx[11]_move_xy_by_angle.nx[11]_mux_218_OUT1042)
+     LUT6:I5->O            1   0.205   0.580  game_logic_/Mmux_move_xy_by_angle.ny[11]_move_xy_by_angle.ny[11]_mux_219_OUT1010 (game_logic_/Mmux_move_xy_by_angle.ny[11]_move_xy_by_angle.ny[11]_mux_219_OUT109)
+     LUT6:I5->O            2   0.205   0.721  game_logic_/Mmux_move_xy_by_angle.ny[11]_move_xy_by_angle.ny[11]_mux_219_OUT1011 (game_logic_/Mmux_move_xy_by_angle.ny[11]_move_xy_by_angle.ny[11]_mux_219_OUT1010)
+     LUT2:I0->O            1   0.203   0.684  game_logic_/Mmux_move_xy_by_angle.ny[11]_move_xy_by_angle.ny[11]_mux_219_OUT1014_SW2 (N262)
+     LUT6:I4->O            1   0.203   0.000  game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_lut<0> (game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_cy<0> (game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_cy<1> (game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_cy<1>)
+     XORCY:CI->O          11   0.180   1.111  game_logic_/Msub_p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT_xor<2> (game_logic_/p1_current_position_y[11]_move_xy_by_angle.ny[11]_sub_221_OUT<2>)
+     LUT4:I1->O            3   0.205   0.651  game_logic_/GND_23_o_p1_current_position_y[11]_AND_144_o1 (game_logic_/GND_23_o_p1_current_position_y[11]_AND_144_o1)
+     LUT6:I5->O            4   0.205   0.912  game_logic_/GND_23_o_p1_current_position_y[11]_AND_144_o131_SW0 (N641)
+     LUT6:I3->O            1   0.205   0.000  game_logic_/Madd_n0995[12:0]_lut<0> (game_logic_/Madd_n0995[12:0]_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  game_logic_/Madd_n0995[12:0]_cy<0> (game_logic_/Madd_n0995[12:0]_cy<0>)
+     XORCY:CI->O           9   0.180   1.058  game_logic_/Madd_n0995[12:0]_xor<1> (game_logic_/n0995[12:0]<1>)
+     LUT3:I0->O           14   0.205   1.062  game_logic_/GND_23_o_p2_current_position_y[11]_AND_146_o6 (game_logic_/GND_23_o_p2_current_position_y[11]_AND_146_o6)
+     LUT6:I4->O            7   0.203   0.774  game_logic_/GND_23_o_p2_current_position_y[11]_AND_146_o9_1 (game_logic_/GND_23_o_p2_current_position_y[11]_AND_146_o9)
+     LUT6:I5->O           19   0.205   1.072  game_logic_/move_xy_by_angle.nx[11]_GND_23_o_AND_151_o1 (game_logic_/move_xy_by_angle.nx[11]_GND_23_o_AND_151_o1)
+     LUT6:I5->O            1   0.205   0.580  game_logic_/move_xy_by_angle.nx[11]_GND_23_o_AND_151_o3_1 (game_logic_/move_xy_by_angle.nx[11]_GND_23_o_AND_151_o3)
+     LUT6:I5->O            1   0.205   0.000  game_logic_/Mmux_move_xy_by_angle.nx[11]_detect_collision_with_o.ball_x_o[11]_mux_307_OUT81_G (N1316)
+     MUXF7:I1->O          20   0.140   1.093  game_logic_/Mmux_move_xy_by_angle.nx[11]_detect_collision_with_o.ball_x_o[11]_mux_307_OUT81 (game_logic_/move_xy_by_angle.nx[11]_detect_collision_with_o.ball_x_o[11]_mux_307_OUT<5>)
+     LUT6:I5->O            3   0.205   0.651  game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_331_o11_1 (game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_331_o111)
+     LUT6:I5->O           18   0.205   1.050  game_logic_/GND_23_o_GND_23_o_AND_154_o7 (game_logic_/GND_23_o_GND_23_o_AND_154_o)
+     LUT6:I5->O            1   0.205   0.580  game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_374_o121 (game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_374_o121)
+     LUT5:I4->O           13   0.205   0.933  game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_374_o122_SW1 (N195)
+     LUT6:I5->O           12   0.205   0.909  game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_374_o123 (game_logic_/move_xy_by_angle.nx[11]_GND_23_o_LessThan_374_o12)
+     LUT5:I4->O            1   0.205   0.000  game_logic_/Mmux_ball_dir_PWR_24_o_MUX_358_o11 (game_logic_/ball_dir_PWR_24_o_MUX_358_o)
+     FD:D                      0.102          game_logic_/ball_dir
+    ----------------------------------------
+    Total                     24.100ns (5.709ns logic, 18.391ns route)
+                                       (23.7% logic, 76.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 3438 / 166
+-------------------------------------------------------------------------
+Offset:              9.834ns (Levels of Logic = 21)
+  Source:            btn<3> (PAD)
+  Destination:       game_logic_/p2_current_position_y_4 (FF)
+  Destination Clock: clk rising
+
+  Data Path: btn<3> to game_logic_/p2_current_position_y_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.580  btn_3_IBUF (btn_3_IBUF)
+     LUT2:I1->O            1   0.205   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_lut<0> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<0> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<1> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<2> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<3> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<4> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<5> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<6> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<7> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<8> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<8>)
+     MUXCY:CI->O           0   0.019   0.000  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<9> (game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_cy<9>)
+     XORCY:CI->O           4   0.180   0.683  game_logic_/Mmux_p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT_rs_xor<10> (game_logic_/p2_current_position_y[11]_p2_current_position_y[11]_mux_7_OUT<10>)
+     INV:I->O              1   0.206   0.000  game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_lut<10>_INV_0 (game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_lut<10>)
+     MUXCY:S->O            0   0.172   0.000  game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_cy<10> (game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_cy<10>)
+     XORCY:CI->O          10   0.180   1.201  game_logic_/Msub_p2_current_position_y[11]_GND_23_o_sub_11_OUT_xor<11> (game_logic_/p2_current_position_y[11]_GND_23_o_sub_11_OUT<11>)
+     LUT6:I1->O            1   0.203   0.944  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o222 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o222)
+     LUT6:I0->O            1   0.203   0.924  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o223 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o223)
+     LUT6:I1->O            5   0.203   0.819  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o224 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o224)
+     LUT6:I4->O            5   0.203   1.059  game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o225 (game_logic_/p2_current_position_y[11]_GND_23_o_LessThan_19_o22)
+     LUT5:I0->O            1   0.203   0.000  game_logic_/Mmux_p2_current_position_y[11]_GND_23_o_mux_19_OUT71 (game_logic_/p2_current_position_y[11]_GND_23_o_mux_19_OUT<4>)
+     FDRE:D                    0.102          game_logic_/p2_current_position_y_4
+    ----------------------------------------
+    Total                      9.834ns (3.625ns logic, 6.209ns route)
+                                       (36.9% logic, 63.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_50mhz/counter_1'
+  Total number of paths / destination ports: 23 / 23
+-------------------------------------------------------------------------
+Offset:              4.091ns (Levels of Logic = 2)
+  Source:            btn<0> (PAD)
+  Destination:       vga_controller_/horizontal_counter_0 (FF)
+  Destination Clock: clock_50mhz/counter_1 rising
+
+  Data Path: btn<0> to vga_controller_/horizontal_counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            29   1.222   1.354  btn_0_IBUF (btn_0_IBUF)
+     LUT2:I0->O           11   0.203   0.882  vga_controller_/Mcount_horizontal_counter_val2 (vga_controller_/Mcount_horizontal_counter_val)
+     FDR:R                     0.430          vga_controller_/horizontal_counter_0
+    ----------------------------------------
+    Total                      4.091ns (1.855ns logic, 2.236ns route)
+                                       (45.3% logic, 54.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_50mhz/counter_1'
+  Total number of paths / destination ports: 26 / 10
+-------------------------------------------------------------------------
+Offset:              6.114ns (Levels of Logic = 3)
+  Source:            vga_controller_/vertical_counter_4 (FF)
+  Destination:       Vsync (PAD)
+  Source Clock:      clock_50mhz/counter_1 rising
+
+  Data Path: vga_controller_/vertical_counter_4 to Vsync
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            11   0.447   1.247  vga_controller_/vertical_counter_4 (vga_controller_/vertical_counter_4)
+     LUT6:I0->O            2   0.203   0.864  vga_controller_/vertical_counter[10]_GND_22_o_LessThan_20_o131 (vga_controller_/vertical_counter[10]_GND_22_o_LessThan_20_o13)
+     LUT5:I1->O            1   0.203   0.579  Vsync1 (Vsync_OBUF)
+     OBUF:I->O                 2.571          Vsync_OBUF (Vsync)
+    ----------------------------------------
+    Total                      6.114ns (3.424ns logic, 2.690ns route)
+                                       (56.0% logic, 44.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk                  |    9.423|         |         |         |
+clk_ball             |   10.785|         |         |         |
+clock_50mhz/counter_1|   13.536|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_ball
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   18.120|         |         |         |
+clk_ball       |   24.100|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clock_50mhz/counter_1
+---------------------+---------+---------+---------+---------+
+                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------+---------+---------+---------+---------+
+clk                  |    6.672|         |         |         |
+clk_ball             |    7.651|         |         |         |
+clock_50mhz/counter_1|    6.471|         |         |         |
+---------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 66.00 secs
+Total CPU time to Xst completion: 65.43 secs
+ 
+--> 
+
+Total memory usage is 313416 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  234 (   0 filtered)
+Number of infos    :   28 (   0 filtered)
+
